@@ -5,7 +5,8 @@ import Nav from '../../components/Nav';
 import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import FoodPage from '../FoodPage/FoodPage'
+import Footer from './components/Footer'
+// import FoodPage from '../FoodPage/FoodPage'
 
 
 
@@ -61,19 +62,18 @@ class App extends Component {
             handleSignup={this.handleSignup}
           />
         }/>
-          <Redirect to='/login'  render={({ history }) =>
-            <FoodPage
-              history={history}
-              handleFood={this.handleFood}
-            />
+          <Redirect to='/login'
         
-        }/>
+        />
         
       </Switch>
-
+      <Footer />
       </div>
+      
     );
+    
   }
+
 }
 
 export default App;
