@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import Nav from '../../components/Nav';
 
-class foodPage  {
+class FoodPage  {
 
     render() {
         <>
@@ -16,4 +16,4 @@ class foodPage  {
 }
 
 
-export default foodPage
+export default FoodPage

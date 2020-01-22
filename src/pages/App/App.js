@@ -5,6 +5,7 @@ import Nav from '../../components/Nav';
 import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import FoodPage from '../FoodPage/FoodPage'
 
 
 
@@ -27,6 +28,10 @@ class App extends Component {
 
   handleSignup = () => {
     this.setState({user: userService.getUser()});
+  }
+
+  handleFood = () => {
+    this.setState({user: userService.getUser()})
   }
 
 
@@ -56,8 +61,14 @@ class App extends Component {
             handleSignup={this.handleSignup}
           />
         }/>
-          <Redirect to='/login' />
+          <Redirect to='/login'  render={({ history }) =>
+            <FoodPage
+              history={history}
+              handleFood={this.handleFood}
+            />
+        
         }/>
+        
       </Switch>
 
       </div>
