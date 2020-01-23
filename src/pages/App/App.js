@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, Link} from 'react-router-dom';
 
-import Nav_Bar from '../../components/NavBar';
+// import Nav_Bar from '../../components/NavBar';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import './App.css';
 
 import Footer from '../../components/Footer'
-import userService from '../../utils/userService';
-import SignupPage from '../SignupPage/SignupPage';
-import LoginPage from '../LoginPage/LoginPage';
+// import HomePage from './pages/HomePage';
+// import AboutPage from './pages/AboutPage';
+// import FoodPage from '../../pages/FoodPage/FoodPage';
+// import userService from '../../utils/userService';
+// import SignupPage from '../SignupPage/SignupPage';
+// import LoginPage from '../LoginPage/LoginPage';
 // import Footer from ''
 // import FoodPage from '../FoodPage/FoodPage'
 
@@ -17,28 +20,51 @@ import LoginPage from '../LoginPage/LoginPage';
 
 
 class App extends Component {
-  constructor() {
-    super();
+
+  constructor(props) {
+    super(props);
     this.state = {
-      // ...this.getInitialState(),
-      // Initialize user if there's a token, otherwise null
-      user: userService.getUser()
-    };
+      title: 'Drive In',
+      headerLinks: [
+        { title: 'Home', path: '/' },
+        { title: 'About', path: '/about' },
+        { title: 'Contact', path: '/FoodPage' }
+      ],
+      home: {
+        title: 'Be Relentless',
+        subTitle: 'Projects the make a difference',
+        text: 'Checkout my projects below'
+      },
+      about: {
+        title: 'About'
+      },
+      contact: {
+        title: 'Food Menu'
+      }
+    }
   }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     // ...this.getInitialState(),
+  //     // Initialize user if there's a token, otherwise null
+  //     user: userService.getUser()
+  //   };
+  // }
 
-  handleLogout = () => {
-    userService.logout();
-    this.setState({ user: null });
-  }
+  // handleLogout = () => {
+  //   userService.logout();
+  //   this.setState({ user: null });
+  // }
 
 
-  handleSignup = () => {
-    this.setState({user: userService.getUser()});
-  }
+  // handleSignup = () => {
+  //   this.setState({user: userService.getUser()});
+  // }
 
-  handleFood = () => {
-    this.setState({user: userService.getUser()})
-  }
+  // handleFood = () => {
+  //   this.setState({user: userService.getUser()})
+  // }
 
 
   
@@ -55,13 +81,13 @@ class App extends Component {
             <Nav className="ml-auto">
             <Link className="nav-link" to="/">Home</Link>
             <Link className="nav-link" to="/about">Movies</Link>
-            <Link className="nav-link" to="/contact">Tickets</Link>
+            <Link className="nav-link" to="/FoodPage">Food</Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>          
         {/* <Nav /> */}
         </header>
-        <Switch>
+        {/* <Switch>
           <Route exact path='/' render={() =>
           <h1>Hi</h1>
           }/>
@@ -82,7 +108,7 @@ class App extends Component {
         
         />
         
-      </Switch>
+      </Switch> */}
       <Footer />
       </div>
       
