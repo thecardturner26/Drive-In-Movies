@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect} from 'react-router-dom';
+import { Route, Switch, Redirect, Link} from 'react-router-dom';
 
-import Nav from '../../components/Nav';
+import Nav_Bar from '../../components/NavBar';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import './App.css';
+
+import Footer from '../../components/Footer'
 import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import Footer from './components/Footer'
+// import Footer from ''
 // import FoodPage from '../FoodPage/FoodPage'
 
 
@@ -42,8 +47,19 @@ class App extends Component {
     return (
       <div className='App'>
         <header >
-          
-          <Nav />
+        <Navbar className="border-bottom" bg="transparent" expand="lg">
+          <Navbar.Brand>Drive in</Navbar.Brand>
+
+            <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
+            <Navbar.Collapse id="navbar-toggle">
+            <Nav className="ml-auto">
+            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/about">Movies</Link>
+            <Link className="nav-link" to="/contact">Tickets</Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>          
+        {/* <Nav /> */}
         </header>
         <Switch>
           <Route exact path='/' render={() =>
