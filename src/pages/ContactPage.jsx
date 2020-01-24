@@ -3,15 +3,12 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import Hero from '../../components/Hero';
-import Content from '../../components/Content';
-// import Axios from 'axios';
+import Hero from '../components/Hero';
+import Content from '../components/Content';
+import Axios from 'axios';
 
-// import { Link } from 'react-router-dom';
-// import { render } from '@testing-library/react';
-// import Nav from '../../components/NavBar';
+class ContactPage extends React.Component {
 
-class FoodPage  extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,39 +32,40 @@ class FoodPage  extends React.Component {
     }
 
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
 
-    //     console.log(event.target);
+        console.log(event.target);
 
-    //     this.setState({
-    //         disabled: true
-    //     });
+        this.setState({
+            disabled: true
+        });
 
-    //     Axios.post('http://localhost:3030/api/email', this.state)
-    //         .then(res => {
-    //             if(res.data.success) {
-    //                 this.setState({
-    //                     disabled: false,
-    //                     emailSent: true
-    //                 });
-    //             } else {
-    //                 this.setState({
-    //                     disabled: false,
-    //                     emailSent: false
-    //                 });
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
+        Axios.post('http://localhost:3030/api/email', this.state)
+            .then(res => {
+                if(res.data.success) {
+                    this.setState({
+                        disabled: false,
+                        emailSent: true
+                    });
+                } else {
+                    this.setState({
+                        disabled: false,
+                        emailSent: false
+                    });
+                }
+            })
+            .catch(err => {
+                console.log(err);
 
-    //             this.setState({
-    //                 disabled: false,
-    //                 emailSent: false
-    //             });
-    //         })
+                this.setState({
+                    disabled: false,
+                    emailSent: false
+                });
+            })
 
-    // }
+    }
+
 
     render() {
         return(
@@ -109,8 +107,4 @@ class FoodPage  extends React.Component {
 
 }
 
-export default FoodPage;
-
-
-
-
+export default ContactPage;

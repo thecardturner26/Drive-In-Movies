@@ -5,6 +5,6 @@ const usersCtrl = require('../../controllers/users');
 /*---------- Public Routes ----------*/
 router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
-router.post('/FoodPage', usersCtrl.foodpage)
+// router.post('/FoodPage', usersCtrl.foodpage)
 /*---------- Protected Routes ----------*/
 module.exports = router;
