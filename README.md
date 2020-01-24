@@ -17,6 +17,10 @@ Lets all enjoy a nice movie under the stars.
 https://trello.com/b/r8rrfCrP/project-4final
 <img src="https://i.imgur.com/AMBEncr.png">
 
+## WireFrame
+
+<img src='https://i.imgur.com/x6FX53s.jpg'>
+
 ## Tech
 
 JS <br/>
